@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "kh.farrukh.quickserver.quizzer";
+option java_outer_classname = "QuizzerProto";
+option objc_class_prefix = "QZR";
+
+package quizzer;
+
+service Quizzer {
+  rpc GetQuestion (GetQuestionRequest) returns (GetQuestionResponse) {}
+}
+
+message GetQuestionRequest {
+  string username = 1;
+}
+
+message GetQuestionResponse {
+  int32 id = 1;
+  string username = 2;
+  string question = 3;
+}
